@@ -1,0 +1,177 @@
+Assignment 05, 06, 07 - “RESTful API Development”
+Task: Create a RESTful (REST stands for Representational State Transfer) API with Typescript and NodeJS.
+
+Endpoint: http://localhost:3002/api/v1/top/get-all-tops
+Method: POST
+Params: none Request Payload: none Response:
+{
+    "message": "Success",
+    "resp": {
+        "data": [
+            {
+                "id": 1,
+                "sleeve": "long",
+                "color": "black",
+                "occasion": "business",
+                "season": "winter",
+                "user_id": 1,
+                "active": true,
+                "created_by": "lphan",
+                "updated_by": null,
+                "created_at": "2021-05-08T17:51:34.324Z",
+                "updated_at": "2021-05-08T17:51:34.324Z",
+                "deleted_at": null,
+                "pattern": null
+            },
+            {
+                "id": 2,
+                "sleeve": "short",
+                "color": "blue",
+                "occasion": "casual",
+                "season": "summer",
+                "user_id": 1,
+                "active": true,
+                "created_by": "lphan",
+                "updated_by": null,
+                "created_at": "2021-05-08T19:07:30.932Z",
+                "updated_at": "2021-05-08T19:07:30.932Z",
+                "deleted_at": null,
+                "pattern": null
+            },
+            {
+                "id": 3,
+                "sleeve": "short",
+                "color": "purple",
+                "occasion": "business",
+                "season": "summer",
+                "user_id": 1,
+                "active": true,
+                "created_by": "lphan",
+                "updated_by": null,
+                "created_at": "2021-05-08T19:07:54.354Z",
+                "updated_at": "2021-05-08T19:07:54.354Z",
+                "deleted_at": null,
+                "pattern": null
+            }
+        ],
+        "statusCode": 200
+    }
+}
+_________________________________
+Description: Get a top by its ID from the database
+Endpoint: http://localhost:3002/api/v1/top/get-top-by-id/:id
+Method: POST
+Params: id - the top id 
+Request Payload: none
+Response:
+{
+    "message": "Success",
+    "resp": {
+        "data": [
+            {
+                "id": 2,
+                "sleeve": "short",
+                "color": "blue",
+                "occasion": "casual",
+                "season": "summer",
+                "user_id": 1,
+                "active": true,
+                "created_by": "lphan",
+                "updated_by": null,
+                "created_at": "2021-05-08T19:07:30.932Z",
+                "updated_at": "2021-05-08T19:07:30.932Z",
+                "deleted_at": null,
+                "pattern": null
+            }
+        ],
+        "statusCode": 200
+    }
+}
+_________________________________
+Description: Create a new top record
+Endpoint: http://localhost:3002/api/v1/top/create-top
+Method: POST
+Params: none
+Request Payload:
+{
+"sleeve": "short",
+"color": "white",
+"pattern": "nautical",
+"occasion": "casual",
+"season": "summer",
+"user_id": "1"
+}
+Response:
+{
+    "message": "Success",
+    "resp": {
+        "data": {
+            "id": 4,
+            "sleeve": "short",
+            "color": "white",
+            "occasion": "casual",
+            "season": "summer",
+            "user_id": 1,
+            "active": true,
+            "created_by": "lphan",
+            "updated_by": null,
+            "created_at": "2021-05-08T22:35:26.661Z",
+            "updated_at": "2021-05-08T22:35:26.661Z",
+            "deleted_at": null,
+            "pattern": "nautical"
+        },
+        "statusCode": 200
+    }
+}
+_________________________________
+Description: Update a top record
+Endpoint: http://localhost:3002/api/v1/top/update-top/id/4
+Method: PUT
+Params: id - the id of the top Request Payload:
+{
+"pattern": "pineapples"
+}
+Response:
+{
+    "message": "Success",
+    "resp": {
+        "data": {
+            "id": 4,
+            "sleeve": "short",
+            "color": "white",
+            "occasion": "casual",
+            "season": "summer",
+            "user_id": 1,
+            "active": true,
+            "created_by": "lphan",
+            "updated_by": "lphan",
+            "created_at": "2021-05-08T22:35:26.661Z",
+            "updated_at": "2021-05-08T22:44:01.902Z",
+            "deleted_at": null,
+            "pattern": "pineapples"
+        },
+        "statusCode": 200
+    }
+}
+_________________________________
+Description: Delete a top record
+Endpoint: http://localhost:3002/api/v1/top/id/4
+Method: DELETE
+Params: id - The id of the top Request Payload: None Response:
+{
+    "message": "Success",
+    "resp": {
+        "data": {
+            "command": "DELETE",
+            "rowCount": 1,
+            "oid": null,
+            "rows": [],
+            "fields": [],
+            "_parsers": [],
+            "RowCtor": null,
+            "rowAsArray": false
+        },
+        "statusCode": 200
+    }
+}
+
